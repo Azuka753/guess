@@ -11,7 +11,7 @@ import (
 
 func main(){
 	fmt.Println("猜数字")
-	number := rand.Intn(100)
+	number := rand.Intn(1000)
 	reader := bufio.NewReader(os.Stdin)
 	count := 0
 	Loop:
