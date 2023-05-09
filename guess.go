@@ -13,18 +13,19 @@ func main(){
 	fmt.Println("猜数字")
 	number := rand.Intn(100)
 	reader := bufio.NewReader(os.Stdin)
+	count := 0
 	Loop:
 	for {
 		s, _ := reader.ReadString('\n')
 		i, _ := strconv.Atoi(strings.TrimSpace(s))
-		fmt.Println("你输入的数字是：",  i)
+		count++
 		switch{
 		case i > number:
 			fmt.Println("猜大了！")
 		case i < number:
 			fmt.Println("猜小了！")
 		case i == number:
-			fmt.Println("猜对了！")
+			fmt.Println("猜对了！你一共猜了", count, "次")
 			break Loop
 		}
 	}
