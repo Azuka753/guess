@@ -17,7 +17,11 @@ func main(){
 	Loop:
 	for {
 		s, _ := reader.ReadString('\n')
-		i, _ := strconv.Atoi(strings.TrimSpace(s))
+		i, err := strconv.Atoi(strings.TrimSpace(s))
+		if err != nil {
+			fmt.Println("检查输入，再来一遍")
+			continue
+		}
 		count++
 		switch{
 		case i > number:
