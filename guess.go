@@ -10,7 +10,7 @@ import (
 )
 
 func main(){
-	fmt.Println("猜数字")
+	fmt.Println("猜0~1000的数字")
 	number := rand.Intn(1000)
 	reader := bufio.NewReader(os.Stdin)
 	count := 0
